@@ -8,36 +8,99 @@
     <title>CV of Steffen Schanze</title>
     <meta name="description" content="This is the CV of Steffen Schanze">
     <meta name="author" content="Steffen Schanze">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <h1>Steffen Schanze CV</h1>
+        <p>Frontend Developer</p>
+        <nav>
+            <a href="#profile">Profile</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <main>
+    <main class="main">
         <article>
-            <h2>Profile</h2>
+            <h2 id="profile">Profile</h2>
+            <p class="profile-paragraph">I am a German <strong>Frontend Developer</strong> with experience in building web apps with
+                <strong>Angular, Typescript & Firebase</strong> and other technologies. I built the projects on my own
+                as well as in teams using agile project-management methods.</p>
         </article>
         <article>
-            <h2>Experience</h2>
+            <h2 id="experience">Experience</h2>
             <section>
-                <h3>Job 1</h3>
+                <header>
+                    <h3>Lenser Filtration GmbH + Co. KG</h3>
+                    <p>JAN 2002 - JUN 2007</p>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo consequuntur vel quae, obcaecati
+                    laborum maxime quasi id nam error magnam culpa dicta dignissimos quisquam dolorum unde beatae,
+                    possimus eaque architecto?
+                </p>
             </section>
             <section>
-                <h3>Job 2</h3>
+                <header>
+                    <h3>Deutz-Fahr Agrarsysteme GmbH</h3>
+                    <p>JUN 1998 - JUL 1999</p>
+                </header>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo consequuntur vel quae, obcaecati
+                    laborum maxime quasi id nam error magnam culpa dicta dignissimos quisquam dolorum unde beatae,
+                    possimus eaque architecto?
+                </p>
             </section>
         </article>
         <article>
-            <h2>Skills</h2>
+            <h2 id="skills">Skills</h2>
             <section>
                 <h3>Soft Skills</h3>
+                <ul>
+                    <li>Problem Solving Ability</li>
+                    <li>Communicative Competence</li>
+                    <li>Analytic Thinking</li>
+                </ul>
             </section>
             <section>
                 <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
             </section>
         </article>
         <article>
-            <h2>Contact</h2>
+            <h2 id="contact">Contact</h2>
+            <ol>
+                <li>
+                    <a class="contact-link" href="mailto:steffenjoachim.schanze@gmail.com">
+                        Email: steffenjoachim.schanze@gmail.com</a>
+                </li>
+                <li>
+                    <a class="contact-link" href="tel:+4917634394501">
+                        Mobile: 0176 343 94 501
+                    </a>
+                </li>
+                <li>
+                    <p> Or write to:</p>
+                    <address>
+                        Steffen Schanze<br>
+                        Pfinzstraße 16<br>
+                        76227 Karlsruhe
+                    </address>
+                </li>
+            </ol>
         </article>
     </main>
 </body>
