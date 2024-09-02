@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-body {
+html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -15,6 +15,10 @@ h1 {
     padding-top: 24px;
 }
 
+h1::after {
+    content: '👍';
+}
+
 h2 {
     padding-top: 18px;
 }
@@ -24,7 +28,7 @@ h3 {
 }
 
 header, main {
-    padding: 16px 32px;
+    padding: 24px 0 8px 0;
 }
 
 
@@ -53,9 +57,51 @@ header, main {
 
   a {
     text-decoration: none;
+  }
+
+  a:active {
+    color: white;
+  }
+
+ a:hover {
+    color:blue
+  }
+
+  .nav-link {
     color: lightblue;
   }
 
   .contact-link {
     color: black;
+  }
+
+  article + article {
+    margin-top: 40px;
+  }
+
+  a + a {
+    padding-left: 16px;
+  }
+
+  /* article:nth-child(2), article:nth-child(3) , article:nth-child(4) {
+    border-top: 2px solid grey;
+  }
+  oder einfacher: */
+
+  main > article:not(:first-child) {
+    border-top: 2px solid rgba(0, 0, 0, .2);
+}
+
+
+  ::selection {
+    background-color: black;
+    color: white;
+  }
+
+  header h3, header p {
+    display: inline;
+  }
+
+  h3 + p {
+    padding-left: 16px;
   }
