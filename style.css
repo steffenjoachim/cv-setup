@@ -5,14 +5,24 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
 }
 
 h1, h2, h3 {
     font-family: 'Raleway', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.header-group {
+  font-size: 5rem;
+}
+
 h1 {
-    padding-top: 24px;
+  font-size: 1em;
+  padding-top: 4.5rem;
+}
+
+.profession {
+  font-size: 0.5em;
 }
 
 h1::after {
@@ -20,15 +30,17 @@ h1::after {
 }
 
 h2 {
-    padding-top: 18px;
+    padding-top: 1.125rem;
+    position: relative;
+    left: -2rem;
 }
 
 h3 {
-    padding-top: 16px;
+    padding-top: 1.125rem;
 }
 
 header, main {
-    padding: 24px 0 8px 0;
+    padding: 1.5rem 0 0.5rem 0;
 }
 
 
@@ -36,38 +48,54 @@ header, main {
     text-align: center;
     background-color: cornflowerblue;
     color: white;
+    position: relative;
+}
+
+aside {
+  position: absolute;
+  background-color: yellow;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  color: red;
+  font-weight: bold;
+  font-size: 2em;
 }
 
 .profile-paragraph {
-    padding-top: 16px;
+    padding-top: 1rem;
 }
 
 .main {
-    max-width: 800px;
+    max-width: 25ch;
     margin: 0 auto;
+    font-size: 2rem;
   }
 
   li {
-    padding: 8px 0;
+    padding: 0.5rem 0;
   }
 
   nav {
-    padding-top: 16px;
+    padding-top: 1rem;
   }
 
   a {
     text-decoration: none;
   }
 
+ a:hover {
+    color:blue;
+    cursor: pointer;
+  }
+
   a:active {
     color: white;
   }
 
- a:hover {
-    color:blue
-  }
-
   .nav-link {
+    font-size: 1.5rem;
     color: lightblue;
   }
 
@@ -76,11 +104,11 @@ header, main {
   }
 
   article + article {
-    margin-top: 40px;
+    margin-top: 2.5rem;
   }
 
   a + a {
-    padding-left: 16px;
+    padding-left: 1rem;
   }
 
   /* article:nth-child(2), article:nth-child(3) , article:nth-child(4) {
@@ -88,8 +116,17 @@ header, main {
   }
   oder einfacher: */
 
-  main > article:not(:first-child) {
-    border-top: 2px solid rgba(0, 0, 0, .2);
+  .main > article:not(:first-child) {
+    position: relative;
+}
+
+.main > article:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2rem; /* Verschiebt die Linie nach links, passend zur h2 */
+    width: calc(100% + 2rem); /* Erweitert die Linie, damit sie die volle Breite des Artikels abdeckt */
+    border-top: 0.2rem solid rgba(0, 0, 0, .2);
 }
 
 
@@ -103,5 +140,44 @@ header, main {
   }
 
   h3 + p {
-    padding-left: 16px;
+    padding-left: 1rem;
+  }
+
+
+  /* responsive design: */
+
+  @media screen and (min-width: 768px) {
+    html {
+      font-size: 12px;
+    }
+
+    .main {
+      max-width: 50ch;
+      font-size: 1.5rem;
+    }
+
+    article + article {
+      margin-top: 3rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    html {
+      font-size: 16px;
+    }
+
+    .main {
+      max-width: 65ch;
+      font-size: 1rem;
+    }
+
+    aside {
+      position: fixed;
+    }
+  }
+
+  @media print {
+    nav, aside {
+      visibility: hidden;
+    }
   }
