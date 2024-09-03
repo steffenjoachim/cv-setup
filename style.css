@@ -25,7 +25,7 @@ h1 {
   font-size: 0.5em;
 }
 
-h1::after {
+.profession::after {
     content: '👍';
 }
 
@@ -43,10 +43,9 @@ header, main {
     padding: 1.5rem 0 0.5rem 0;
 }
 
-
 .header {
     text-align: center;
-    background-color: cornflowerblue;
+    background-image: linear-gradient(cornflowerblue 80%, darkblue);
     color: white;
     position: relative;
 }
@@ -79,6 +78,9 @@ aside {
 
   nav {
     padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   a {
@@ -107,10 +109,6 @@ aside {
     margin-top: 2.5rem;
   }
 
-  a + a {
-    padding-left: 1rem;
-  }
-
   /* article:nth-child(2), article:nth-child(3) , article:nth-child(4) {
     border-top: 2px solid grey;
   }
@@ -121,12 +119,26 @@ aside {
 }
 
 .main > article:not(:first-child)::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -2rem; /* Verschiebt die Linie nach links, passend zur h2 */
-    width: calc(100% + 2rem); /* Erweitert die Linie, damit sie die volle Breite des Artikels abdeckt */
-    border-top: 0.2rem solid rgba(0, 0, 0, .2);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  width: calc(100% + 2rem);
+  height: 0.2rem; /* Höhe der Linie */
+  background: linear-gradient(to right, black, lightgray); 
+}
+
+.experience-date-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-date-group > h3 {
+  padding-top: 0;
+}
+
+.experience-date-group > p {
+  padding-left: 0;
 }
 
 
@@ -135,12 +147,27 @@ aside {
     color: white;
   }
 
-  header h3, header p {
+  /* header h3, header p {
     display: inline;
-  }
+  } */
 
   h3 + p {
     padding-left: 1rem;
+  }
+
+
+  footer {
+    background-image: linear-gradient(black, lightgray);
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer > p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
   }
 
 
@@ -153,12 +180,30 @@ aside {
 
     .main {
       max-width: 50ch;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
     article + article {
       margin-top: 3rem;
     }
+
+    nav {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    a + a {
+      padding-left: 1rem;
+    }
+
+    .experience-date-group {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .experience-date-group > p {
+      padding-left: 1.2rem;
+    }    
   }
 
   @media screen and (min-width: 992px) {
